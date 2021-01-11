@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Edit Profile </h1>
+<form method="POST" action='' enctype='multipart/form-data' class="white-text">
+{% csrf_token %}
+
+<div id="edit-form">
+    {{profileform.as_p}}
+    <button class = 'btn btn-primary blue' type="submit"> Update </button>
+</div>
+
+</form>
+
+{% endblock content %}

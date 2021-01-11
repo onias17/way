@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="bgc">
+
+    {% comment %} materialize carousel {% endcomment %}
+    <div class="carousel carousel-slider center" id="car-home">
+            <img class="carousel-item" src="static/images/london.jpg" alt="london" width="250" height="500">
+            <img class="carousel-item" src="static/images/sydney.jpg" alt="sydney" width="250" height="500">
+            <img class="carousel-item" src="static/images/seattle.jpg" alt="seattle" width="250" height="500">
+            <img class="carousel-item" src="static/images/sanfrancisco.jpg" alt="sf" width="250" height="500">
+    </div>
+
+    <div class="">
+        <div class="row">
+            <div class="col s12 recent" id="">
+                <h2 class="center">Recent Activity</h2>
+            </div>
+            <div class="col s4" id="left">
+                <h3>Latest City</h3>
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{city.picture.url}}" width="100" height="275">
+                    </div>
+                    <div class="card-content blue">
+                        <span class="card-title activator white-text">{{city.name}}</span>
+                        <p><a href="{% url 'citydetail' city.slug %}" class="white-text"><span class="hoverable">View City</span></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4" id="left">
+                <h3>Latest Post</h3>
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{post.picture.url}}" width="100" height="275">
+                    </div>
+                    <div class="card-content blue">
+                        <span class="card-title activator white-text">{{post.title}}<i class="material-icons right"></i></span>
+                        <p><a href="{% url 'postdetail' post.id %}" class="white-text"><span class="hoverable">View Post</span></a></p>
+                    </div>
+                    <div class="card-reveal blue">
+                        <span class="card-title white-text">{{post.title}}<i class="material-icons right">X</i></span>
+                        <p>{{post.content}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4" id="right">
+                <h3>Newest Profile</h3>
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{profile.picture.url}}" width="100" height="275">
+                    </div>
+                    <div class="card-content blue">
+                        <span class="card-title activator white-text">{{profile.firstname}} {{profile.lastname}}</span>
+                        <p><a href="{% url 'detail' profile.slug %}" class="white-text"><span class="hoverable">View Profile</span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel'); 
+        var instances = M.Carousel.init(elems, {
+                fullWidth: true,
+                indicators: true
+        });
+    });
+</script>
+
+{% endblock content %}

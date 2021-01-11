@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WayFarer {% block title %}{% endblock %}</title>
+  {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> {% endcomment %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% comment %} <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> {% endcomment %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body class="black white-text">
+  <header class="center">
+    <div class="row">
+      {% if user.is_authenticated %}
+      <div class="col s3 blue" id="left">       
+        <a href="/" class="brand-logo white-text"><h6>WAYFARER</h6></a>
+      </div>
+      <div class="col s3 head-opt" id="left">
+        <a href="{% url 'city_index' %}" class="white-text"><h6>Cities</h6></a>
+      </div>
+      <div class="col s3 head-opt" id="left">
+      {% if user.profile %}
+        <a href="{% url 'detail' request.user.profile.slug %}" class="white-text"><h6>My Profile</h6></a> 
+      {% else %}
+        <a href="" class="white-text"><h6>My Profile</h6></a> 
+      {% endif %}
+      </div>
+      <div class="col s3 head-opt" id="right">
+        <a href="{% url 'logout' %}" class="white-text"><h6>Logout</h6></a>
+      </div>
+      {% else %}
+      <div class="col s4 blue" id="left">       
+        <a href="/" class="white-text"><h6>WAYFARER</h6></a>
+      </div>
+      <div class="col s4 head-opt" id="right">
+        <a href="{% url 'login' %}" class="white-text"><h6>Login</h6></a>
+      </div>
+      <div class="col s4 head-opt" id="left">
+        <a href="{% url 'signup' %}" class="white-text"><h6>Sign Up</h6></a>
+      </div>
+      {% endif %}
+    </div>
+  </header>
+  <main class="container center">
+    {% block content %}
+    {% endblock %}
+  </main>
+  {% comment %} <footer class="page-footer blue">
+    <div class="right black-text">All Rights Reserved, &copy; 2019 Cat Collector &nbsp;</div>
+  </footer> {% endcomment %}
+</body>
+</html>

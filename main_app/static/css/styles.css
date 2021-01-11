@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    min-height:100vh;
+    background-color: black;
+}
+
+.profile {
+    /* margin-bottom: 30px; */
+    margin-top: 100px;
+}
+#confirmdelete {
+    color:black;
+    
+}
+
+.header {
+    margin-top: 130px;
+}
+
+#left {
+    border-left: 1px solid;
+    border-color: white;
+}
+
+#right {
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-color: white;
+}
+
+#top {
+    margin-top: 0;
+}
+
+.hoverable:hover {
+    background-color: #03a9f4;
+    color: black;
+}
+
+.head-opt {
+    margin: 0;
+    padding: 25;
+}
+
+.head-opt:hover {
+    background-color: rgb(3, 169, 244);
+}
+
+.image {
+    margin: 25px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: #03a9f4;
+    width: 150px;
+    height: 150px;
+}
+#cityinput {
+    background-color: white;
+    color: black;
+    width: 300px;
+}
+#profile-row {
+    border-top: 1px solid;
+}
+
+#id_content {
+    width : 500px;
+    height: 300px;
+}
+/*  CAROUSEL */
+#car-home {
+    height: 200px;
+    
+}
+
+/* Cities index page */
+#city-card {
+    
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#ci-row {
+    position: relative;
+    left: 250px;
+    margin: 0 auto;
+}
+
+/*------ CITY DETAILS ----- */
+#left-block {
+    border-right: 1px solid;
+    border-color: white;
+    left: 0;
+    width: 400px;
+    
+}
+
+.row .col.s4 {
+    border-right:1px solid;
+}
+
+.post-ul {
+    background-color: white;
+    
+    /* background: border-box; */
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    margin-top: 50px;
+    padding: 10px;
+    /* overflow:hidden;
+    white-space: nowrap; */
+}
+
+.card.horizontal .card-image img{
+    width: 400px;
+    height: 220px;
+    min-width: 180px;
+}
+#id_password {
+    background-color: white;
+    color: black;
+}
+
+#stacked-detail-city{
+    position: relative;
+    right: 175px;
+}
+
+.recent {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+
+/* CIRRUS' CSS*/
+input {
+    
+    color: white;
+}
+#profile {
+    margin: 0 auto;
+    width: 800px;
+}
+#profileauthor {
+    
+    background-color: black;
+}
+
+#comment {
+    color: black;
+    display: relative;
+    min-width: 300px;
+    width: fit-content;
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+#profile-img {
+    width:200px;
+    max-width: 200px;
+}
+
+#imgg {
+    width:200px;
+}
+
+
+/* #profileimg {
+    
+} */
+
+#citycard {
+    position: relative;
+    left: 160px;
+}
+
+#citypostpicture {
+    width: 200px;
+}
+
+#postcontent {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 0px;
+    width: 800px;
+}
+
+#title {
+    background-color: black;
+}
+
+.btn {
+    background-color: #03a9f4
+}
+
+.postb {
+    background-color: #03a9f4
+}
+
+#commenth6  {
+    text-align: left;
+    color: black;
+    width: fit-content;
+    padding-right: 10px;
+}
+
+#id_content {
+    background-color: white;
+    color: black;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#card {
+    margin: 0 auto;
+    width: 500px;
+    height: 100px;
+}
+
+#button {
+    margin-top: 20px
+}
+
+h5 {
+    color: white;
+}
+#id_content {
+    background-color: white;
+    color: black;
+}
+
+#id_title {
+    background-color: white;
+    color: black;
+    max-width: 300px;
+}
+
+#com {
+    color: black;
+}
+
+
+
+#id_email {
+    background-color: white;
+    color: black;
+}
+
+#id_firstname {
+    background-color: white;
+    color: black;
+}
+
+#id_lastname {
+    background-color: white;
+    color: black;
+}
+
+#id_currentcity {
+    background-color: white;
+    color: black;
+}
+
+#id_username {
+    background-color: white;
+    color: black;
+}
+
+#id_password1 {
+    background-color: white;
+    color: black;
+}
+
+#id_password2 {
+    background-color: white;
+    color: black;
+}
+
+#edit-form {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+#postlist {
+    width: 500px;
+}

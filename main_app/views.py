@@ -51,15 +51,15 @@ def new_profile(request):
             new_profile.slug = slugify(new_profile.user.username)
             new_profile.save()
 
-            email = request.POST.get('email', '')
-            data = """ 
-            Hello There!
-            Welcome to Wayfarer, the site with all of the information you need for your future travels. 
-            We hope you enjoy our site.
-            -Wayfarer
-            """
-            send_mail('Welcome!', data, "Wayfarer",
-            [email], fail_silently=False)
+            # email = request.POST.get('email', '')
+            # data = """ 
+            # Hello There!
+            # Welcome to Wayfarer, the site with all of the information you need for your future travels. 
+            # We hope you enjoy our site.
+            # -Wayfarer
+            # """
+            # send_mail('Welcome!', data, "Wayfarer",
+            # [email], fail_silently=False)
             return redirect('detail', new_profile.slug)
     else:
         profile_form = ProfileCreationForm()
@@ -203,14 +203,14 @@ def city_detail(request, slug):
     return render(request, 'cities/detail.html', context)
 
 def success(request):
-    email = request.POST.get('email', '')
-    data = """ 
-    Hi welcome
-    to
-    Wayfarer
-    """
-    send_mail('Welcome!', data, "Wayfarer"
-    [email], fail_silently=False)
+    # email = request.POST.get('email', '')
+    # data = """ 
+    # Hi welcome
+    # to
+    # Wayfarer
+    # """
+    # send_mail('Welcome!', data, "Wayfarer"
+    # [email], fail_silently=False)
     return render(request, '')
 
 

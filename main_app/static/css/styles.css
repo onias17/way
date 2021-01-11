@@ -13,8 +13,7 @@ body {
     margin-top: 100px;
 }
 #confirmdelete {
-    color:black;
-    
+    color:black;   
 }
 
 .header {
@@ -58,6 +57,7 @@ body {
     width: 150px;
     height: 150px;
 }
+
 #cityinput {
     background-color: white;
     color: black;
@@ -74,12 +74,10 @@ body {
 /*  CAROUSEL */
 #car-home {
     height: 200px;
-    
 }
 
 /* Cities index page */
 #city-card {
-    
     max-width: 100%;
     margin: 0 auto;
 }
@@ -96,7 +94,6 @@ body {
     border-color: white;
     left: 0;
     width: 400px;
-    
 }
 
 .row .col.s4 {
@@ -105,7 +102,6 @@ body {
 
 .post-ul {
     background-color: white;
-    
     /* background: border-box; */
     border-right: 1px solid;
     border-top: 1px solid;
@@ -141,7 +137,6 @@ body {
 
 /* CIRRUS' CSS*/
 input {
-    
     color: white;
 }
 #profile {
@@ -149,7 +144,6 @@ input {
     width: 800px;
 }
 #profileauthor {
-    
     background-color: black;
 }
 
@@ -169,7 +163,6 @@ input {
     width:200px;
     max-width: 200px;
 }
-
 #imgg {
     width:200px;
 }
@@ -249,8 +242,6 @@ h5 {
 #com {
     color: black;
 }
-
-
 
 #id_email {
     background-color: white;

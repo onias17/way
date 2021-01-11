@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Cities </h1>
+<div class="row" id="ci-row">
+    {% for city in cities %}
+    <a href="{% url 'citydetail' city.slug %}">
+    <div class="col s12 m7" id="city-card">
+        <div class="card" id="city-index-card" height="auto">
+        {% comment %} <a href="{% url 'citydetail' city.slug%}"> {% endcomment %}
+            <div class="card-image" id="c-img">
+                {% if city.picture %}
+                <img class="responsive-img" src="{{city.picture.url}}">
+                {% else %} <img class="responsive-img" src="/media/images/01-lion-populations-nationalgeographic_1777804.jpg"
+                {% endif %}
+                <span class="card-title id="ct""><h2>{{ city.name }}</h2></span>
+            </div>
+            {% comment %} <div class="card-content">
+            <h2>City Name</h2>
+            </div>
+            <div class="card-action">
+            
+            </div> {% endcomment %}
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+</div>

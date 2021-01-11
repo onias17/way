@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col s12">
+    <!-- Teal page content  -->
+    <h1>{{city.name}}</h1>
+    <img src="{{ city.picture.url }}" width="700" height="500">
+        
+    <h1> Posts </h1>
+    <a class= "btn-small blue" href="{% url "add_citypost" city.id %}"> add post </a>
+    <ul>
+        {% for post in posts %}
+        <a href = {% url 'postdetail' post.id%}>
+            <div class="post-ul blue-text card horizontal">
+                <div class="card-image">
+                    <img id= "citypostpicture" src="{{ post.picture.url }}" width="200" height="200">
+                </div>
+                <div class="card-stacked" id="stacked-detail-city">
+                    <div class="card-content" id="citycard">
+                        <h3 class="blue-text">{{post.title}}</h3>
+                        <h6 class= "blue-text"> Written by <a href = "{% url 'detail' post.profile.slug%}"> {{post.profile.firstname}} {{post.profile.lastname}}</a> </h6>
+                        <p class="blue-text">{{ post.content }}</p>
+                        {{post.date}}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}

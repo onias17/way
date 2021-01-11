@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div id="profile">
+    <div id="profileauthor">
+<div id ="title"><h1> {{post.title}} </h1> </div>
+
+<div> {% if post.picture %}
+    <img src="{{post.picture.url}}" id="postpicture" width="800px" alt="picture"> 
+    {% endif %} </div>
+    <br>
+    <div id = "profileimg"><img class = "circle" src= "{{ post.profile.picture.url}}" alt="picture" width="100px">
+    </div>Written by {{post.profile.firstname}} {{post.profile.lastname}} 
+        <br>
+        {{post.date}} PST
+        <br>
+    </div>
+
+<div id="postcontent">
+{{post.content}}
+
+{% if request.user.profile == post.profile%}
+<div class="card-content">
+    <a class = "btn-small postb left userbtns" href="{% url 'postedit' post.id%} "> Edit </a> 
+    <a id = "firstdelete" class = "btn-small red postb right userbtns"> Delete </a>
+</div>
+
+<!-- DELETE POP UP WINDOW-->
+{% comment %} <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> {% endcomment %}
+
+<div id = "deletediv" class="modal1">
+    <div class="modal-content">
+        <h1 id = "confirmdelete"> Are you sure you want to delete {{post.title}}?</h1>
+        <a href = "{% url 'deletepost' post.id %}" class = ' waves-effect waves-light btn modal-trigger btn-small red'> Yes </a>
+        <a id = "no" class = 'btn-small blue'> No </a>
+    </div>
+    <div class="modal-footer">
+        <div class = "postbuttons">
+        </div>
+    </div>
+</div>
+
+<!-- END OF DELETE POP UP WINDOW-->
+
+<br>
+
+{% endif %}
+</div>
+<br>
+</div>
+<!-- Comment section--> 
+
+
+{% if request.user.profile %}
+<form action = "{% url 'add_comment' post.id %}" method = "POST">
+    {% csrf_token %} 
+    {{comment_form.as_p}}
+
+
+ <!---->
+    <input class = 'btn' type ="submit" value="Submit Comment">
+{% endif %}
+</form> 
+    <h5>Number of comments: {{post.comment_set.count}} </h5>
+
+    {% for comment in post.comment_set.all%}
+    <div id ="comment" class="card">
+    <h6 id="commenth6"> {{comment.profile}} </h6>
+    <img class ="circle" src="{{comment.profile.picture.url}}" width ="75px">
+    <p id="com"> {{comment.content}} </p>
+</div>
+{% if comment.profile == request.user.profile %}
+<a class = "btn" href="{% url 'delete_comment' comment.id %}"> Delete </a>
+
+{% endif %}
+{% endfor %} 
+</div>
+
+<!-- Modal Trigger -->
+
+
+
+
+<script>
+    $(document).ready(function(){
+        $('.modal1').modal();
+    });
+
+    $('#deletediv').hide()
+
+
+    $('#firstdelete').click(function(){
+        $('#deletediv').show()
+        $('.userbtns').hide()
+        console.log('hi')
+    })
+
+    $('#no').click(function(){
+        $('#deletediv').hide()
+        $('.userbtns').show()
+    })
+</script>
+
+{% endblock content %}

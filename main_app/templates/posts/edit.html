@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit Post</h1>
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+
+
+{{postform.as_p}}
+
+<input type="submit" class='btn'>
+</form>
+{% endblock content %}

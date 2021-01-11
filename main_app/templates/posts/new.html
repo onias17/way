@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>New Post</h1>
+
+<form method="POST" action="{% url 'add_post' profile.slug %}" enctype="multipart/form-data">
+{% csrf_token %}
+
+{{form.as_p}}
+<!--- TESTING OUT FORMS
+<input type = 'text' name = 'title'>
+<input type = 'text' name = 'content'>
+
+-->
+{% comment %} <select name = "city" class= "browser-default">
+{% for city in citylist%}
+<option value="{{city.name}}"> {{city.name}} </option>
+{% endfor %}
+</select> {% endcomment %}
+
+<label> City </label>
+<input type = "text" name="city" id="cityinput">
+
+<br> <br>
+<input type="submit" class='btn'>
+</form>
+{% endblock content %}
